@@ -1,0 +1,10 @@
+Feat: Initial Noura setup with Maven, externalized data, and refactored Main.java
+
+This commit introduces the foundational changes for the Noura project:
+- Renamed project to Noura.
+- Integrated Maven for build management and standard project structure.
+- Extracted job track data from Main.java to job_tracks.json.
+- Implemented JobTrack model and JobTrackDataLoader service for data handling.
+- Updated Main.java to load data dynamically.
+- Deleted old individual job track Java files.
+- Added comprehensive README.md and LICENSE file.

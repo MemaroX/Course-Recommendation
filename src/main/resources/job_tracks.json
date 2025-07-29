@@ -1,0 +1,236 @@
+[
+  {
+    "title": "Software Engineer",
+    "description": "Create new software and improve existing software applications,they design and write code used to build everything from OS to mobile apps ",
+    "requiredSkills": [
+      "Data structures and Algorithms",
+      "Database",
+      "Problem solving",
+      "Programming languages"
+    ],
+    "averageSalary": 120000,
+    "developmentLanguages": [
+      "Python",
+      "Ruby",
+      "Java",
+      "PHP",
+      "JS",
+      "C++"
+    ],
+    "developmentFrameworks": [
+      "PyTorch",
+      "Garden",
+      "Spring",
+      "Play",
+      "Spark",
+      "CakePHP",
+      "ReactJS",
+      "TensorFlow"
+    ],
+    "url": "https://www.coursera.org/career-academy/roles/back-end-developer"
+  },
+  {
+    "title": "Data Scientist",
+    "description": "Extract and analyze data to make informed decisions using a series of algorithms and tools to extract insights from structured and unstructured data",
+    "requiredSkills": [
+      "Matplotlib",
+      "Scikit-learn",
+      "Jupyter",
+      "TensorFlow",
+      "Excel",
+      "Python",
+      "Tableau"
+    ],
+    "averageSalary": 138000,
+    "machineLearningAlgorithms": [
+      "Logistic Regression",
+      "Linear Regression",
+      "Naive Bayes",
+      "SVM",
+      "Decision Tree",
+      "KNN",
+      "Random Forest",
+      "Clustering",
+      "Neural Network"
+    ],
+    "dataAnalysisTools": [
+      "Matplotlib",
+      "Scikit-learn",
+      "PyTorch",
+      "Trifacta",
+      "Excel",
+      "BigML",
+      "R"
+    ],
+    "url": "https://www.coursera.org/career-academy/roles/data-scientist"
+  },
+  {
+    "title": "Network Engineer",
+    "description": "Monitor,troubleshoot and maintain networks in a 24/7 environment to ensure stability and security",
+    "requiredSkills": [
+      "CCNA",
+      "Network Security",
+      "Network Fundamentals"
+    ],
+    "averageSalary": 80300,
+    "networkProtocols": [
+      "HTTP",
+      "FTP",
+      "TCP",
+      "POP3",
+      "DNS",
+      "SSH",
+      "Telnet",
+      "SMTP",
+      "Border Gateway Protocol",
+      "DHCP",
+      "UDP",
+      "Simple Network Management Protocol"
+    ],
+    "securityConfigurationTools": [
+      "Net LineDancer",
+      "rConfig",
+      "Kiwi CatTools",
+      "SolarWinds Network Configuration Management",
+      "Bladelogic network automation"
+    ],
+    "url": "https://www.coursera.org/career-academy/roles/network-engineer"
+  },
+  {
+    "title": "Cyber Security Prof",
+    "description": "Develop strategies to protect organizations from cyber-attacks and disruptions",
+    "requiredSkills": [
+      "OS",
+      "C Programming",
+      "Network Fundamentals"
+    ],
+    "averageSalary": 119700,
+    "vulnerabilityAssessmentTools": [
+      "Nessus",
+      "OpenSCAP",
+      "OpenVAS",
+      "Nmap",
+      "Vulnerability Scanner",
+      "Wireshark",
+      "App scanner",
+      "W3af"
+    ],
+    "threatDetectionTechniques": [
+      "PoSATM",
+      "Anomaly Detection",
+      "Signature-based Detection",
+      "Heuristic Analysis",
+      "Sandboxing",
+      "Honey Pots and Honey Nets",
+      "EDR",
+      "AI & ML"
+    ],
+    "url": "https://www.coursera.org/career-academy/roles/cybersecurity-analyst"
+  },
+  {
+    "title": "Web developer",
+    "description": "Creating, building, and maintaining of websites",
+    "requiredSkills": [
+      "Front-Eng technologies",
+      "Back-End technologies"
+    ],
+    "averageSalary": 81700,
+    "frontEndTechnologies": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
+    "backEndTechnologies": [
+      "PHP",
+      "Java",
+      "Python",
+      "Node.JS"
+    ],
+    "url": "https://www.geeksforgeeks.org/web-development/#courses"
+  },
+  {
+    "title": "Mobile developer",
+    "description": " Mobile apps are often written specifically to take advantage of the unique features of a particular mobile device",
+    "requiredSkills": [
+      "Programming languages",
+      "Logical thinking",
+      "Design knowledge"
+    ],
+    "averageSalary": 12700,
+    "url": "https://www.coursera.org/career-academy/roles/android-developer"
+  },
+  {
+    "title": "Game developer",
+    "description": "They are responsible for bringing a video game from concept to reality. To do this, video game developers must code and program visual elements and other features. They also run tests to make sure the game performs well.",
+    "requiredSkills": [
+      "Coding",
+      "Design",
+      "monitoring"
+    ],
+    "averageSalary": 87000,
+    "developmentTools": [
+      "Character Creator Pipeline",
+      "Mixamo",
+      "CeltX",
+      "Blender",
+      "Incredibuild",
+      "GameBench"
+    ],
+    "gameEngine": "Amazon Lumberyard",
+    "url": "https://www.udemy.com/courses/development/game-development/"
+  },
+  {
+    "title": "UX designer",
+    "description": "Create products that provide meaningful and relevant experiences to users.",
+    "requiredSkills": [
+      "Network",
+      "Design",
+      "portfolio",
+      "UX course"
+    ],
+    "averageSalary": 94500,
+    "designPrinciples": [
+      "User-centricity",
+      "Consistency",
+      "Hierarchy",
+      "Context",
+      "User control",
+      "Accessibility",
+      "Usability"
+    ],
+    "userResearchMethodologies": [
+      "User interview",
+      "Survey",
+      "Focus Group Discussion",
+      "Card Sorting",
+      "Sales Analytics",
+      "Competitor Analysis"
+    ],
+    "url": "https://www.coursera.org/career-academy/roles/ux-designer"
+  },
+  {
+    "title": "Technical Writer",
+    "description": "Create content to provide instructions or explain technical concepts regarding environmental regulations, computer applications or medical procedures.",
+    "requiredSkills": [
+      "Computer skill",
+      "Learn style guides",
+      "Develop a portfolio"
+    ],
+    "averageSalary": 81800,
+    "communicationSkills": [
+      "Information design",
+      "Technical writing",
+      "Technical editing",
+      "Marketing"
+    ],
+    "documentationStandards": [
+      "Quick reference guides",
+      "Proposals",
+      "Newsletters",
+      "Website content",
+      "User assistance guides (FAQs)"
+    ],
+    "url": "https://www.udemy.com/courses/search/?q=technical+writing&src=sac&kw=techn"
+  }
+]
