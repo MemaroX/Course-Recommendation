@@ -1,7 +1,8 @@
-Feat: Implement dynamic recommendation logic and enhance console UI
+Feat: Add Unit Testing with JUnit 5
 
-This commit introduces a more intelligent recommendation system:
-- Added RecommendationService for scoring job tracks based on user preferences.
-- Modified Main.java to gather user input (skills/interests).
-- Displays ranked recommendations based on the scoring algorithm.
-- Updated README.md to reflect new features and usage.
+This commit introduces comprehensive unit testing to the Noura project:
+- Added JUnit 5 dependencies to pom.xml.
+- Created src/test/java directory structure.
+- Implemented JobTrackDataLoaderTest to verify data loading.
+- Implemented RecommendationServiceTest to validate recommendation logic.
+- Updated README.md with instructions on how to run tests.

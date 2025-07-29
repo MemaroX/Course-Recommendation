@@ -59,6 +59,14 @@ Noura/
     ```
     Follow the prompts to enter your skills and interests, and Noura will provide job track recommendations.
 
+## Running Tests
+
+To run the unit tests and ensure the core logic is functioning correctly:
+
+```bash
+mvn test
+```
+
 ## Future Enhancements (Noura's Roadmap)
 
 - **Advanced Recommendation Algorithms:** Implement collaborative filtering, content-based filtering, or hybrid approaches.
