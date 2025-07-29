@@ -1,6 +1,6 @@
-Feat: Enhance robustness and error handling
+Feat: Refine recommendation algorithm with nuanced scoring
 
-This commit improves Noura's stability and user experience:
-- Implemented robust input validation for user choices in Main.java.
-- Added specific error handling for data loading issues.
-- Updated README.md to reflect improved error handling.
+This commit enhances the recommendation service:
+- Implemented more sophisticated scoring in RecommendationService.java, considering exact and partial matches for skills and technologies.
+- Updated RecommendationServiceTest.java with new test cases for partial matches.
+- Updated README.md to reflect the improved recommendation algorithm.

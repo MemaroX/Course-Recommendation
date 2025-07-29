@@ -48,53 +48,182 @@ public class RecommendationService {
 
         List<String> preferredSkills = userPreferences.getOrDefault("skills", List.of());
         for (String skill : preferredSkills) {
-            if (jobTrack.getRequiredSkills() != null && jobTrack.getRequiredSkills().contains(skill)) {
-                score += 10;
+            String lowerCaseSkill = skill.toLowerCase();
+
+            // Check required skills
+            if (jobTrack.getRequiredSkills() != null) {
+                for (String requiredSkill : jobTrack.getRequiredSkills()) {
+                    if (requiredSkill.equalsIgnoreCase(skill)) {
+                        score += 15; // Exact match, higher score
+                    } else if (requiredSkill.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 5; // Partial match
+                    }
+                }
             }
-            if (jobTrack.getDevelopmentLanguages() != null && jobTrack.getDevelopmentLanguages().contains(skill)) {
-                score += 8;
+
+            // Check development languages
+            if (jobTrack.getDevelopmentLanguages() != null) {
+                for (String lang : jobTrack.getDevelopmentLanguages()) {
+                    if (lang.equalsIgnoreCase(skill)) {
+                        score += 12;
+                    } else if (lang.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 4;
+                    }
+                }
             }
-            if (jobTrack.getDevelopmentFrameworks() != null && jobTrack.getDevelopmentFrameworks().contains(skill)) {
-                score += 7;
+
+            // Check development frameworks
+            if (jobTrack.getDevelopmentFrameworks() != null) {
+                for (String framework : jobTrack.getDevelopmentFrameworks()) {
+                    if (framework.equalsIgnoreCase(skill)) {
+                        score += 10;
+                    } else if (framework.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 3;
+                    }
+                }
             }
-            if (jobTrack.getMachineLearningAlgorithms() != null && jobTrack.getMachineLearningAlgorithms().contains(skill)) {
-                score += 9;
+
+            // Check ML algorithms
+            if (jobTrack.getMachineLearningAlgorithms() != null) {
+                for (String algo : jobTrack.getMachineLearningAlgorithms()) {
+                    if (algo.equalsIgnoreCase(skill)) {
+                        score += 13;
+                    } else if (algo.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 4;
+                    }
+                }
             }
-            if (jobTrack.getDataAnalysisTools() != null && jobTrack.getDataAnalysisTools().contains(skill)) {
-                score += 7;
+
+            // Check data analysis tools
+            if (jobTrack.getDataAnalysisTools() != null) {
+                for (String tool : jobTrack.getDataAnalysisTools()) {
+                    if (tool.equalsIgnoreCase(skill)) {
+                        score += 10;
+                    } else if (tool.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 3;
+                    }
+                }
             }
-            if (jobTrack.getNetworkProtocols() != null && jobTrack.getNetworkProtocols().contains(skill)) {
-                score += 6;
+
+            // Check network protocols
+            if (jobTrack.getNetworkProtocols() != null) {
+                for (String protocol : jobTrack.getNetworkProtocols()) {
+                    if (protocol.equalsIgnoreCase(skill)) {
+                        score += 9;
+                    } else if (protocol.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 3;
+                    }
+                }
             }
-            if (jobTrack.getSecurityConfigurationTools() != null && jobTrack.getSecurityConfigurationTools().contains(skill)) {
-                score += 6;
+
+            // Check security configuration tools
+            if (jobTrack.getSecurityConfigurationTools() != null) {
+                for (String tool : jobTrack.getSecurityConfigurationTools()) {
+                    if (tool.equalsIgnoreCase(skill)) {
+                        score += 9;
+                    } else if (tool.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 3;
+                    }
+                }
             }
-            if (jobTrack.getVulnerabilityAssessmentTools() != null && jobTrack.getVulnerabilityAssessmentTools().contains(skill)) {
-                score += 8;
+
+            // Check vulnerability assessment tools
+            if (jobTrack.getVulnerabilityAssessmentTools() != null) {
+                for (String tool : jobTrack.getVulnerabilityAssessmentTools()) {
+                    if (tool.equalsIgnoreCase(skill)) {
+                        score += 11;
+                    } else if (tool.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 4;
+                    }
+                }
             }
-            if (jobTrack.getThreatDetectionTechniques() != null && jobTrack.getThreatDetectionTechniques().contains(skill)) {
-                score += 8;
+
+            // Check threat detection techniques
+            if (jobTrack.getThreatDetectionTechniques() != null) {
+                for (String technique : jobTrack.getThreatDetectionTechniques()) {
+                    if (technique.equalsIgnoreCase(skill)) {
+                        score += 11;
+                    } else if (technique.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 4;
+                    }
+                }
             }
-            if (jobTrack.getFrontEndTechnologies() != null && jobTrack.getFrontEndTechnologies().contains(skill)) {
-                score += 7;
+
+            // Check front-end technologies
+            if (jobTrack.getFrontEndTechnologies() != null) {
+                for (String tech : jobTrack.getFrontEndTechnologies()) {
+                    if (tech.equalsIgnoreCase(skill)) {
+                        score += 10;
+                    } else if (tech.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 3;
+                    }
+                }
             }
-            if (jobTrack.getBackEndTechnologies() != null && jobTrack.getBackEndTechnologies().contains(skill)) {
-                score += 7;
+
+            // Check back-end technologies
+            if (jobTrack.getBackEndTechnologies() != null) {
+                for (String tech : jobTrack.getBackEndTechnologies()) {
+                    if (tech.equalsIgnoreCase(skill)) {
+                        score += 10;
+                    } else if (tech.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 3;
+                    }
+                }
             }
-            if (jobTrack.getDevelopmentTools() != null && jobTrack.getDevelopmentTools().contains(skill)) {
-                score += 6;
+
+            // Check development tools (Game Dev)
+            if (jobTrack.getDevelopmentTools() != null) {
+                for (String tool : jobTrack.getDevelopmentTools()) {
+                    if (tool.equalsIgnoreCase(skill)) {
+                        score += 9;
+                    } else if (tool.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 3;
+                    }
+                }
             }
-            if (jobTrack.getDesignPrinciples() != null && jobTrack.getDesignPrinciples().contains(skill)) {
-                score += 5;
+
+            // Check design principles (UX)
+            if (jobTrack.getDesignPrinciples() != null) {
+                for (String principle : jobTrack.getDesignPrinciples()) {
+                    if (principle.equalsIgnoreCase(skill)) {
+                        score += 8;
+                    } else if (principle.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 2;
+                    }
+                }
             }
-            if (jobTrack.getUserResearchMethodologies() != null && jobTrack.getUserResearchMethodologies().contains(skill)) {
-                score += 5;
+
+            // Check user research methodologies (UX)
+            if (jobTrack.getUserResearchMethodologies() != null) {
+                for (String method : jobTrack.getUserResearchMethodologies()) {
+                    if (method.equalsIgnoreCase(skill)) {
+                        score += 8;
+                    } else if (method.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 2;
+                    }
+                }
             }
-            if (jobTrack.getCommunicationSkills() != null && jobTrack.getCommunicationSkills().contains(skill)) {
-                score += 4;
+
+            // Check communication skills (Tech Writer)
+            if (jobTrack.getCommunicationSkills() != null) {
+                for (String commSkill : jobTrack.getCommunicationSkills()) {
+                    if (commSkill.equalsIgnoreCase(skill)) {
+                        score += 7;
+                    } else if (commSkill.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 2;
+                    }
+                }
             }
-            if (jobTrack.getDocumentationStandards() != null && jobTrack.getDocumentationStandards().contains(skill)) {
-                score += 4;
+
+            // Check documentation standards (Tech Writer)
+            if (jobTrack.getDocumentationStandards() != null) {
+                for (String standard : jobTrack.getDocumentationStandards()) {
+                    if (standard.equalsIgnoreCase(skill)) {
+                        score += 7;
+                    } else if (standard.toLowerCase().contains(lowerCaseSkill)) {
+                        score += 2;
+                    }
+                }
             }
         }
 

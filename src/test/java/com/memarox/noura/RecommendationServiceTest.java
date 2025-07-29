@@ -82,4 +82,20 @@ public class RecommendationServiceTest {
         int score = recommendationService.calculateScore(softwareEngineer, userPreferences);
         assertEquals(0, score);
     }
+
+    @Test
+    void testCalculateScore_partialMatchSkills() {
+        Map<String, List<String>> userPreferences = new HashMap<>();
+        userPreferences.put("skills", Arrays.asList("problem")); // Partial match for "Problem solving"
+
+        JobTrack softwareEngineer = allJobTracks.stream()
+                .filter(jt -> jt.getTitle().equals("Software Engineer"))
+                .findFirst()
+                .orElse(null);
+        assertNotNull(softwareEngineer);
+
+        int score = recommendationService.calculateScore(softwareEngineer, userPreferences);
+        assertTrue(score > 0); // Should get some score for partial match
+        // The exact score depends on the weighting, but it should be non-zero
+    }
 }
