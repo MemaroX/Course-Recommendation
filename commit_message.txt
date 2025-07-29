@@ -1,9 +1,9 @@
-Feat: Expand user preferences and refine recommendation algorithm
+Feat: Implement User Profiling and Persistence with SQLite
 
-This commit significantly enhances Noura's recommendation capabilities:
-- Added new preference fields (primaryInterestArea, workEnvironmentPreference, learningStylePreference) to JobTrack model.
-- Updated job_tracks.json with data for new preference types.
-- Modified Main.java to gather user input for new preferences.
-- Refined RecommendationService.java to incorporate new preferences into scoring logic with appropriate weights.
-- Added new test cases to RecommendationServiceTest.java to validate scoring with new preferences.
-- Updated README.md to reflect expanded preference types and improved recommendation accuracy.
+This commit introduces user profiling and persistence to Noura:
+- Added SQLite JDBC driver, JPA, and Hibernate dependencies to pom.xml.
+- Created User and UserPreference entities for database mapping.
+- Configured persistence.xml for SQLite.
+- Developed UserPreferenceService to handle saving and loading user preferences.
+- Modified Main.java to integrate user login, preference loading, and saving.
+- Updated README.md to document the new persistence feature.
