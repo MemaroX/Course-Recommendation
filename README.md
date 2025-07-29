@@ -12,7 +12,7 @@ To create an intelligent recommendation engine that goes beyond simple rule-base
 - **Externalized Data:** Job track information is stored in a `job_tracks.json` file, making it easy to update and extend without code changes.
 - **Maven Build System:** Standardized project structure and dependency management.
 - **Dynamic Recommendation Logic:** Gathers user preferences (e.g., skills, interests) and provides ranked job track recommendations based on a scoring algorithm.
-- **Enhanced Console Interface:** Guides users through preference input and presents recommendations clearly.
+- **Robust Error Handling:** Improved input validation and graceful handling of potential issues during data loading and user interaction.
 
 ## Project Structure
 

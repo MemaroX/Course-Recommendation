@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -76,7 +77,40 @@ public class Main {
             logger.info("Displayed top {} recommendations.", Math.min(5, recommendedTracks.size()));
         }
 
-        System.out.println("Thank you for using Noura! Best of luck on your career journey.");
+        // Display menu and handle user choice
+        System.out.println("\n--- Job Tracks Menu ---");
+        for (int i = 0; i < jobTracks.size(); i++) {
+            System.out.println((i + 1) + ". " + jobTracks.get(i).getTitle());
+        }
+        System.out.println((jobTracks.size() + 1) + ". Exit");
+
+        int userChoice;
+        do {
+            System.out.print("Enter the number of the job track you want to know more about, or " + (jobTracks.size() + 1) + " to exit: ");
+            try {
+                userChoice = scanner.nextInt();
+                scanner.nextLine(); // Consume newline left-over
+
+                if (userChoice > 0 && userChoice <= jobTracks.size()) {
+                    JobTrack selectedTrack = jobTracks.get(userChoice - 1);
+                    System.out.println("\n--- Details for " + selectedTrack.getTitle() + " ---");
+                    System.out.println("Description: " + selectedTrack.getDescription());
+                    System.out.println("Required skills: " + selectedTrack.getRequiredSkills());
+                    System.out.println("Average Salary: $" + selectedTrack.getAverageSalary());
+                    System.out.println("More Info: " + selectedTrack.getUrl());
+                    System.out.println();
+                } else if (userChoice == jobTracks.size() + 1) {
+                    System.out.println("Exiting Noura. Best of luck on your career journey!");
+                } else {
+                    System.out.println("Invalid choice. Please enter a number between 1 and " + (jobTracks.size() + 1) + ".");
+                }
+            } catch (InputMismatchException e) {
+                logger.warn("Invalid input type: {}", scanner.next()); // Log the invalid input
+                System.out.println("Invalid input. Please enter a number.");
+                userChoice = 0; // Set to 0 to keep loop running
+            }
+        } while (userChoice != jobTracks.size() + 1);
+
         scanner.close();
         logger.info("Noura application finished.");
     }
