@@ -2,9 +2,14 @@ package com.memarox.noura;
 
 import com.memarox.noura.model.JobTrack;
 import com.memarox.noura.service.JobTrackDataLoader;
+import com.memarox.noura.service.RecommendationService;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("ALL")
 public class Main {
@@ -17,45 +22,47 @@ public class Main {
             return;
         }
 
-        System.out.println();
-        System.out.println("Hello, This is a program for those who can't figure out what job track they want from CSE student to another.");
-        System.out.println();
-        System.out.println("Computer Science has such wonderful fields, everyone has different preferences & We are trying to help.");
-        System.out.println();
-
-        System.out.println("Choose what inspires you the most:");
-        System.out.println();
-
-        for (int i = 0; i < jobTracks.size(); i++) {
-            System.out.println((i + 1) + "- " + jobTracks.get(i).getTitle());
-            System.out.println();
-        }
-        System.out.println((jobTracks.size() + 1) + "- Exit.");
-        System.out.println();
-
+        RecommendationService recommendationService = new RecommendationService();
         Scanner scanner = new Scanner(System.in);
-        int userChoice;
 
-        do {
-            System.out.print("Enter your choice: ");
-            userChoice = scanner.nextInt();
+        System.out.println();
+        System.out.println("Hello, This is Noura, your personal career guide for CSE students.");
+        System.out.println();
+        System.out.println("Computer Science has such wonderful fields, and we are here to help you find your path.");
+        System.out.println();
 
-            if (userChoice > 0 && userChoice <= jobTracks.size()) {
-                JobTrack selectedTrack = jobTracks.get(userChoice - 1);
-                System.out.println("Job Title: " + selectedTrack.getTitle());
-                System.out.println("Description: " + selectedTrack.getDescription());
-                System.out.println("Required skills: " + selectedTrack.getRequiredSkills());
-                System.out.println("Average salary: " + selectedTrack.getAverageSalary());
-                System.out.println("More Info: " + selectedTrack.getUrl());
+        // Collect user preferences
+        Map<String, List<String>> userPreferences = new HashMap<>();
+
+        System.out.println("To help me recommend the best job track for you, please answer a few questions.");
+        System.out.println("Enter skills or interests you have, separated by commas (e.g., Java, Python, AI, Databases):");
+        String skillsInput = scanner.nextLine();
+        userPreferences.put("skills", Arrays.stream(skillsInput.split(","))
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .collect(Collectors.toList()));
+
+        // You can add more questions here to gather more preferences
+        // e.g., preferred salary range, work environment, interest in specific technologies
+
+        System.out.println("\nAnalyzing your preferences...");
+        List<JobTrack> recommendedTracks = recommendationService.getRecommendations(jobTracks, userPreferences);
+
+        System.out.println("\nHere are the job tracks recommended for you:");
+        if (recommendedTracks.isEmpty()) {
+            System.out.println("No specific recommendations based on your input. Try different keywords!");
+        } else {
+            for (int i = 0; i < Math.min(5, recommendedTracks.size()); i++) { // Display top 5 recommendations
+                JobTrack track = recommendedTracks.get(i);
+                System.out.println((i + 1) + ". " + track.getTitle() + " (Score: " + recommendationService.calculateScore(track, userPreferences) + ")");
+                System.out.println("   Description: " + track.getDescription());
+                System.out.println("   Average Salary: $" + track.getAverageSalary());
+                System.out.println("   More Info: " + track.getUrl());
                 System.out.println();
-            } else if (userChoice == jobTracks.size() + 1) {
-                System.out.println("Exit, hope we Helped.");
-                System.out.println("Best Luck!");
-            } else {
-                System.out.println("Invalid choice. Please try again.");
             }
-        } while (userChoice != jobTracks.size() + 1);
+        }
 
+        System.out.println("Thank you for using Noura! Best of luck on your career journey.");
         scanner.close();
     }
 }

@@ -11,7 +11,8 @@ To create an intelligent recommendation engine that goes beyond simple rule-base
 - **Modular Design:** Separated concerns for data handling, business logic, and user interaction.
 - **Externalized Data:** Job track information is stored in a `job_tracks.json` file, making it easy to update and extend without code changes.
 - **Maven Build System:** Standardized project structure and dependency management.
-- **Interactive Console Interface:** Guides users through job track selection.
+- **Dynamic Recommendation Logic:** Gathers user preferences (e.g., skills, interests) and provides ranked job track recommendations based on a scoring algorithm.
+- **Enhanced Console Interface:** Guides users through preference input and presents recommendations clearly.
 
 ## Project Structure
 
@@ -25,7 +26,7 @@ Noura/
 │   │   │       └── memarox/
 │   │   │           └── noura/
 │   │   │               ├── model/             # Data models (e.g., JobTrack.java)
-│   │   │               ├── service/           # Business logic and data loading (e.g., JobTrackDataLoader.java)
+│   │   │               ├── service/           # Business logic and data loading (e.g., JobTrackDataLoader.java, RecommendationService.java)
 │   │   │               └── Main.java          # Main application entry point
 │   │   └── resources/       # Non-Java resources (e.g., job_tracks.json)
 │   │       └── job_tracks.json
@@ -56,6 +57,7 @@ Noura/
     ```bash
     mvn exec:java
     ```
+    Follow the prompts to enter your skills and interests, and Noura will provide job track recommendations.
 
 ## Future Enhancements (Noura's Roadmap)
 
