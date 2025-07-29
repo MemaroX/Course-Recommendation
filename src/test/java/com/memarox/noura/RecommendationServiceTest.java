@@ -98,4 +98,49 @@ public class RecommendationServiceTest {
         assertTrue(score > 0); // Should get some score for partial match
         // The exact score depends on the weighting, but it should be non-zero
     }
+
+    @Test
+    void testGetRecommendations_primaryInterestArea() {
+        Map<String, List<String>> userPreferences = new HashMap<>();
+        userPreferences.put("primaryInterestArea", List.of("Data Science"));
+
+        List<JobTrack> recommendations = recommendationService.getRecommendations(allJobTracks, userPreferences);
+
+        assertNotNull(recommendations);
+        assertFalse(recommendations.isEmpty());
+        assertEquals("Data Scientist", recommendations.get(0).getTitle());
+    }
+
+    @Test
+    void testGetRecommendations_workEnvironmentPreference() {
+        Map<String, List<String>> userPreferences = new HashMap<>();
+        userPreferences.put("workEnvironmentPreference", List.of("Startup"));
+
+        List<JobTrack> recommendations = recommendationService.getRecommendations(allJobTracks, userPreferences);
+
+        assertNotNull(recommendations);
+        assertFalse(recommendations.isEmpty());
+        // Mobile developer, Web developer, Game developer, UX designer are all startups
+        // The order might vary based on other default scores, but one of them should be high
+        assertTrue(recommendations.stream().anyMatch(jt -> jt.getTitle().equals("Mobile developer") ||
+                                                          jt.getTitle().equals("Web developer") ||
+                                                          jt.getTitle().equals("Game developer") ||
+                                                          jt.getTitle().equals("UX designer")));
+    }
+
+    @Test
+    void testGetRecommendations_learningStylePreference() {
+        Map<String, List<String>> userPreferences = new HashMap<>();
+        userPreferences.put("learningStylePreference", List.of("Theoretical Learning"));
+
+        List<JobTrack> recommendations = recommendationService.getRecommendations(allJobTracks, userPreferences);
+
+        assertNotNull(recommendations);
+        assertFalse(recommendations.isEmpty());
+        // Data Scientist, Cybersecurity Analyst, UX Designer, Technical Writer have Theoretical Learning
+        assertTrue(recommendations.stream().anyMatch(jt -> jt.getTitle().equals("Data Scientist") ||
+                                                          jt.getTitle().equals("Cyber Security Prof") ||
+                                                          jt.getTitle().equals("UX designer") ||
+                                                          jt.getTitle().equals("Technical Writer")));
+    }
 }

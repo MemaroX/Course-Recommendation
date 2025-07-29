@@ -227,6 +227,30 @@ public class RecommendationService {
             }
         }
 
+        // Score based on primary interest area
+        String preferredInterestArea = userPreferences.getOrDefault("primaryInterestArea", List.of("")).get(0);
+        if (!preferredInterestArea.isEmpty() && jobTrack.getPrimaryInterestArea() != null &&
+            jobTrack.getPrimaryInterestArea().equalsIgnoreCase(preferredInterestArea)) {
+            score += 20; // High score for matching primary interest
+        }
+
+        // Score based on work environment preference
+        String preferredWorkEnvironment = userPreferences.getOrDefault("workEnvironmentPreference", List.of("")).get(0);
+        if (!preferredWorkEnvironment.isEmpty() && jobTrack.getWorkEnvironmentPreference() != null &&
+            jobTrack.getWorkEnvironmentPreference().equalsIgnoreCase(preferredWorkEnvironment)) {
+            score += 15; // Good score for matching work environment
+        }
+
+        // Score based on learning style preference
+        List<String> preferredLearningStyles = userPreferences.getOrDefault("learningStylePreference", List.of());
+        if (jobTrack.getLearningStylePreference() != null) {
+            for (String style : preferredLearningStyles) {
+                if (jobTrack.getLearningStylePreference().contains(style)) {
+                    score += 10; // Score for matching learning style
+                }
+            }
+        }
+
         return score;
     }
 

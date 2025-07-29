@@ -13,6 +13,11 @@ public class JobTrack {
     private double averageSalary;
     private String url;
 
+    // New preference fields
+    private String primaryInterestArea;
+    private String workEnvironmentPreference;
+    private List<String> learningStylePreference;
+
     // Specific fields for Software Engineer
     private List<String> developmentLanguages;
     private List<String> developmentFrameworks;
@@ -123,6 +128,54 @@ public class JobTrack {
      */
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    /**
+     * Returns the primary interest area for the job track.
+     * @return The primary interest area.
+     */
+    public String getPrimaryInterestArea() {
+        return primaryInterestArea;
+    }
+
+    /**
+     * Sets the primary interest area for the job track.
+     * @param primaryInterestArea The primary interest area.
+     */
+    public void setPrimaryInterestArea(String primaryInterestArea) {
+        this.primaryInterestArea = primaryInterestArea;
+    }
+
+    /**
+     * Returns the preferred work environment for the job track.
+     * @return The preferred work environment.
+     */
+    public String getWorkEnvironmentPreference() {
+        return workEnvironmentPreference;
+    }
+
+    /**
+     * Sets the preferred work environment for the job track.
+     * @param workEnvironmentPreference The preferred work environment.
+     */
+    public void setWorkEnvironmentPreference(String workEnvironmentPreference) {
+        this.workEnvironmentPreference = workEnvironmentPreference;
+    }
+
+    /**
+     * Returns the list of learning style preferences for the job track.
+     * @return A list of learning style preferences.
+     */
+    public List<String> getLearningStylePreference() {
+        return learningStylePreference;
+    }
+
+    /**
+     * Sets the list of learning style preferences for the job track.
+     * @param learningStylePreference A list of learning style preferences.
+     */
+    public void setLearningStylePreference(List<String> learningStylePreference) {
+        this.learningStylePreference = learningStylePreference;
     }
 
     /**

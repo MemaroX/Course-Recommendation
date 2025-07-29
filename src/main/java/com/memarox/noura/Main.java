@@ -54,6 +54,25 @@ public class Main {
                 .filter(s -> !s.isEmpty())
                 .collect(Collectors.toList()));
 
+        System.out.println("\nWhat is your primary interest area? (e.g., Web Development, Data Science, Cybersecurity, Mobile Development, Game Development, Network Engineering, UX Design, Technical Writing):");
+        String interestAreaInput = scanner.nextLine();
+        if (!interestAreaInput.trim().isEmpty()) {
+            userPreferences.put("primaryInterestArea", List.of(interestAreaInput.trim()));
+        }
+
+        System.out.println("\nDo you prefer working in a startup, large corporation, or research/academic setting? (Type: startup, large corporation, or research/academic):");
+        String workEnvironmentInput = scanner.nextLine();
+        if (!workEnvironmentInput.trim().isEmpty()) {
+            userPreferences.put("workEnvironmentPreference", List.of(workEnvironmentInput.trim()));
+        }
+
+        System.out.println("\nWhat is your preferred learning style? (e.g., Hands-on Projects, Theoretical Learning, Balanced Approach - separate by commas):");
+        String learningStyleInput = scanner.nextLine();
+        userPreferences.put("learningStylePreference", Arrays.stream(learningStyleInput.split(","))
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .collect(Collectors.toList()));
+
         logger.info("User preferences collected: {}", userPreferences);
 
         System.out.println("\nAnalyzing your preferences...");

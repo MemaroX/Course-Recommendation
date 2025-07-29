@@ -1,6 +1,9 @@
-Feat: Refine recommendation algorithm with nuanced scoring
+Feat: Expand user preferences and refine recommendation algorithm
 
-This commit enhances the recommendation service:
-- Implemented more sophisticated scoring in RecommendationService.java, considering exact and partial matches for skills and technologies.
-- Updated RecommendationServiceTest.java with new test cases for partial matches.
-- Updated README.md to reflect the improved recommendation algorithm.
+This commit significantly enhances Noura's recommendation capabilities:
+- Added new preference fields (primaryInterestArea, workEnvironmentPreference, learningStylePreference) to JobTrack model.
+- Updated job_tracks.json with data for new preference types.
+- Modified Main.java to gather user input for new preferences.
+- Refined RecommendationService.java to incorporate new preferences into scoring logic with appropriate weights.
+- Added new test cases to RecommendationServiceTest.java to validate scoring with new preferences.
+- Updated README.md to reflect expanded preference types and improved recommendation accuracy.

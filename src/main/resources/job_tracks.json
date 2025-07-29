@@ -27,7 +27,10 @@
       "ReactJS",
       "TensorFlow"
     ],
-    "url": "https://www.coursera.org/career-academy/roles/back-end-developer"
+    "url": "https://www.coursera.org/career-academy/roles/back-end-developer",
+    "primaryInterestArea": "Software Development",
+    "workEnvironmentPreference": "Large Corporation",
+    "learningStylePreference": ["Hands-on Projects", "Theoretical Learning"]
   },
   {
     "title": "Data Scientist",
@@ -62,7 +65,10 @@
       "BigML",
       "R"
     ],
-    "url": "https://www.coursera.org/career-academy/roles/data-scientist"
+    "url": "https://www.coursera.org/career-academy/roles/data-scientist",
+    "primaryInterestArea": "Data Science",
+    "workEnvironmentPreference": "Research/Academic",
+    "learningStylePreference": ["Theoretical Learning", "Hands-on Projects"]
   },
   {
     "title": "Network Engineer",
@@ -94,7 +100,10 @@
       "SolarWinds Network Configuration Management",
       "Bladelogic network automation"
     ],
-    "url": "https://www.coursera.org/career-academy/roles/network-engineer"
+    "url": "https://www.coursera.org/career-academy/roles/network-engineer",
+    "primaryInterestArea": "Network Engineering",
+    "workEnvironmentPreference": "Large Corporation",
+    "learningStylePreference": ["Hands-on Projects"]
   },
   {
     "title": "Cyber Security Prof",
@@ -125,7 +134,10 @@
       "EDR",
       "AI & ML"
     ],
-    "url": "https://www.coursera.org/career-academy/roles/cybersecurity-analyst"
+    "url": "https://www.coursera.org/career-academy/roles/cybersecurity-analyst",
+    "primaryInterestArea": "Cybersecurity",
+    "workEnvironmentPreference": "Large Corporation",
+    "learningStylePreference": ["Hands-on Projects", "Theoretical Learning"]
   },
   {
     "title": "Web developer",
@@ -147,7 +159,10 @@
       "Python",
       "Node.JS"
     ],
-    "url": "https://www.geeksforgeeks.org/web-development/#courses"
+    "url": "https://www.geeksforgeeks.org/web-development/#courses",
+    "primaryInterestArea": "Web Development",
+    "workEnvironmentPreference": "Startup",
+    "learningStylePreference": ["Hands-on Projects"]
   },
   {
     "title": "Mobile developer",
@@ -158,7 +173,10 @@
       "Design knowledge"
     ],
     "averageSalary": 12700,
-    "url": "https://www.coursera.org/career-academy/roles/android-developer"
+    "url": "https://www.coursera.org/career-academy/roles/android-developer",
+    "primaryInterestArea": "Mobile Development",
+    "workEnvironmentPreference": "Startup",
+    "learningStylePreference": ["Hands-on Projects"]
   },
   {
     "title": "Game developer",
@@ -178,7 +196,10 @@
       "GameBench"
     ],
     "gameEngine": "Amazon Lumberyard",
-    "url": "https://www.udemy.com/courses/development/game-development/"
+    "url": "https://www.udemy.com/courses/development/game-development/",
+    "primaryInterestArea": "Game Development",
+    "workEnvironmentPreference": "Startup",
+    "learningStylePreference": ["Hands-on Projects"]
   },
   {
     "title": "UX designer",
@@ -207,14 +228,17 @@
       "Sales Analytics",
       "Competitor Analysis"
     ],
-    "url": "https://www.coursera.org/career-academy/roles/ux-designer"
+    "url": "https://www.coursera.org/career-academy/roles/ux-designer",
+    "primaryInterestArea": "UX Design",
+    "workEnvironmentPreference": "Startup",
+    "learningStylePreference": ["Hands-on Projects", "Theoretical Learning"]
   },
   {
     "title": "Technical Writer",
     "description": "Create content to provide instructions or explain technical concepts regarding environmental regulations, computer applications or medical procedures.",
     "requiredSkills": [
       "Computer skill",
-      "Learn style guides",
+      "Learn style styles",
       "Develop a portfolio"
     ],
     "averageSalary": 81800,
@@ -231,6 +255,9 @@
       "Website content",
       "User assistance guides (FAQs)"
     ],
-    "url": "https://www.udemy.com/courses/search/?q=technical+writing&src=sac&kw=techn"
+    "url": "https://www.udemy.com/courses/search/?q=technical+writing&src=sac&kw=techn",
+    "primaryInterestArea": "Technical Writing",
+    "workEnvironmentPreference": "Large Corporation",
+    "learningStylePreference": ["Theoretical Learning"]
   }
 ]
