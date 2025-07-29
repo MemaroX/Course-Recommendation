@@ -39,6 +39,8 @@ Noura/
 - **Java 17+**
 - **Maven:** For project build automation and dependency management.
 - **Jackson:** For JSON parsing and data binding.
+- **JUnit 5:** For unit testing.
+- **SLF4J & Logback:** For robust logging.
 
 ## Getting Started
 
@@ -66,6 +68,21 @@ To run the unit tests and ensure the core logic is functioning correctly:
 ```bash
 mvn test
 ```
+
+## Logging
+
+Noura uses SLF4J with Logback for logging. The `logback.xml` configuration file in `src/main/resources` controls the logging behavior. By default, logs are printed to the console. You can adjust the logging level (e.g., `info`, `debug`, `error`) and appenders as needed.
+
+## Documentation (Javadoc)
+
+Comprehensive Javadoc comments have been added throughout the codebase to explain classes, methods, and important fields. To generate the Javadoc documentation:
+
+```bash
+mvn javadoc:javadoc
+```
+
+This will generate HTML documentation in the `target/site/apidocs` directory.
+
 
 ## Future Enhancements (Noura's Roadmap)
 

@@ -1,8 +1,8 @@
-Feat: Add Unit Testing with JUnit 5
+Feat: Implement Javadoc documentation and integrate SLF4J/Logback for logging
 
-This commit introduces comprehensive unit testing to the Noura project:
-- Added JUnit 5 dependencies to pom.xml.
-- Created src/test/java directory structure.
-- Implemented JobTrackDataLoaderTest to verify data loading.
-- Implemented RecommendationServiceTest to validate recommendation logic.
-- Updated README.md with instructions on how to run tests.
+This commit enhances Noura's professionalism and maintainability:
+- Added SLF4J and Logback dependencies to pom.xml.
+- Implemented comprehensive Javadoc comments for all core classes and methods.
+- Replaced System.out.println() with SLF4J logging for better control and insights.
+- Configured logging behavior via logback.xml.
+- Updated README.md with sections on logging and documentation.
